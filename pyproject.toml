@@ -49,7 +49,6 @@ minversion = "8.2.2"
 # -ra - Shows a summary of tests that failed, were skipped, or xfail (expected to fail)
 # -q - Runs pytest in quiet mode, showing only the summary of the test results
 addopts = "-ra -q"
-asyncio_mode = "auto"
 testpaths = ["tests"]
 
 [tool.isort]
@@ -57,9 +56,9 @@ profile = "black"
 
 [tool.poe]
 include = [
-    "./cli/tests_tasks.toml",
-    "./cli/fmt_tasks.toml",
-    "./cli/type_check_tasks.toml",
+  "./cli/tests_tasks.toml",
+  "./cli/fmt_tasks.toml",
+  "./cli/type_check_tasks.toml",
 ]
 
 [build-system]
