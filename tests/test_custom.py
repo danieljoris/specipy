@@ -1,10 +1,11 @@
 import pytest
+
 from src.extensions import (
+    BetweenSpecification,
     GreaterThanSpecification,
     LessThanSpecification,
-    BetweenSpecification,
-    MinLengthSpecification,
     MaxLengthSpecification,
+    MinLengthSpecification,
 )
 
 
