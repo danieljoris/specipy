@@ -12,7 +12,7 @@ class TestSpecification:
 
         spec = InvalidSpecification()
         with pytest.raises(
-            NotImplementedError, match="Você deve implementar o método is_satisfied_by."
+            NotImplementedError, match="You must implement the 'is_satisfied_by' method."
         ):
             spec(10)
 

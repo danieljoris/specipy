@@ -6,7 +6,7 @@ T = TypeVar("T")
 
 class Specification(Protocol[T]):
     def is_satisfied_by(self, candidate: T) -> bool:
-        raise NotImplementedError("Você deve implementar o método is_satisfied_by.")
+        raise NotImplementedError("You must implement the 'is_satisfied_by' method.")
 
     def __call__(self, candidate: T) -> bool:
         return self.is_satisfied_by(candidate)
