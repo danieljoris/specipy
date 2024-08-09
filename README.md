@@ -2,8 +2,8 @@
 SpeciPy simplifies the implementation of the Specification pattern in Python, enabling easy creation and evaluation of flexible rules and criteria.
 
 [![Build status](https://github.com/danieljoris/specipy/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/danieljoris/specipy/actions/workflows/ci.yml)
-![Coverage Status](https://img.shields.io/codecov/c/github/danieljoris/specipy)
-![License](https://img.shields.io/github/license/danieljoris/specipy)
+[![Coverage Status](https://codecov.io/gh/danieljoris/specipy/branch/main/graph/badge.svg?token=C70HMVKXDK)](https://codecov.io/gh/danieljoris/specipy)
+[![License](https://img.shields.io/github/license/danieljoris/specipy)](https://github.com/danieljoris/specipy/blob/main/LICENSE)
 
 ---
 
