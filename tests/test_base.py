@@ -1,6 +1,7 @@
 # tests/test_base.py
 
 import pytest
+
 from src.base import Specification
 
 

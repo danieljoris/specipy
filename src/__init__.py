@@ -1,4 +1,4 @@
-from src.base import Specification, AndSpecification, NotSpecification, OrSpecification
+from src.base import AndSpecification, NotSpecification, OrSpecification, Specification
 from src.extensions import GreaterThanSpecification, LessThanSpecification
 
 __all__ = [

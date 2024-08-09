@@ -1,7 +1,3 @@
-# tests/test_custom.py
-
-import pytest
-
 from src.extensions import GreaterThanSpecification, LessThanSpecification
 
 
