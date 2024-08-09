@@ -60,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: coverage-data
-          path: .coverage
+          path: coverage.xml
 
   security-check:
     runs-on: ubuntu-latest
@@ -124,22 +124,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: coverage-data
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.12.0
-
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
-        with:
-          version: 1.7.1
-
-      - name: Install dependencies
-        run: poetry install
-
-      - name: Generate coverage report
-        run: poetry run poe generate-codecov-report
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
