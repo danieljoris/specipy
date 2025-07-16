@@ -61,6 +61,9 @@ include = [
   "./cli/type_check_tasks.toml",
 ]
 
+[tool.pylint.'MESSAGES CONTROL']
+disable = ["missing-function-docstring", "missing-class-docstring"]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
