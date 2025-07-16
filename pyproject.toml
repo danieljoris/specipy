@@ -62,7 +62,11 @@ include = [
 ]
 
 [tool.pylint.'MESSAGES CONTROL']
-disable = ["missing-function-docstring", "missing-class-docstring"]
+disable = [
+  "missing-function-docstring",
+  "missing-class-docstring",
+  "missing-module-docstring",
+]
 
 [build-system]
 requires = ["poetry-core"]
