@@ -65,6 +65,9 @@ jobs:
   security-check:
     runs-on: ubuntu-latest
     needs: test
+    permissions:
+      # required for all workflows
+      security-events: write
 
     steps:
       - name: Checkout repository
@@ -84,10 +87,12 @@ jobs:
         run: poetry install
 
       - name: Checks dependencies for vulnerabilities and licenses.
-        run: poetry run safety scan --full-report
+        uses: pyupio/safety-action@v1
+        with:
+          api-key: ${{ secrets.SAFETY_API_KEY }}
 
       - name: Checks common security issues in Python code.
-        run: poetry run bandit ./src -r
+        uses: PyCQA/bandit-action@v1
 
   type-check:
     runs-on: ubuntu-latest
