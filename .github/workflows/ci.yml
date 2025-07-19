@@ -84,7 +84,7 @@ jobs:
         run: poetry install
 
       - name: Checks dependencies for vulnerabilities and licenses.
-        run: poetry run safety check --ignore 70612
+        run: poetry run safety scan --full-report
 
       - name: Checks common security issues in Python code.
         run: poetry run bandit ./src -r
