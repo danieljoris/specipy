@@ -1,9 +1,7 @@
 # SpeciPy
 SpeciPy simplifies the implementation of the Specification pattern in Python, enabling easy creation and evaluation of flexible rules and criteria.
 
-[![Build status](https://github.com/danieljoris/specipy/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/danieljoris/specipy/actions/workflows/ci.yml)
-[![Coverage Status](https://codecov.io/gh/danieljoris/specipy/branch/main/graph/badge.svg?token=C70HMVKXDK)](https://codecov.io/gh/danieljoris/specipy)
-[![License](https://img.shields.io/github/license/danieljoris/specipy)](https://github.com/danieljoris/specipy/blob/main/LICENSE)
+[![Build status](https://github.com/danieljoris/specipy/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/danieljoris/specipy/actions/workflows/ci.yml) [![Python Versions](https://img.shields.io/pypi/pyversions/specipy.svg)](https://pypi.org/project/specipy/) [![Package Version](https://badge.fury.io/py/specipy.svg)](https://pypi.org/project/specipy/) [![Coverage Status](https://codecov.io/gh/danieljoris/specipy/branch/main/graph/badge.svg?token=C70HMVKXDK)](https://codecov.io/gh/danieljoris/specipy) [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black) [![License](https://img.shields.io/github/license/danieljoris/specipy)](https://github.com/danieljoris/specipy/blob/main/LICENSE)
 
 ---
 
