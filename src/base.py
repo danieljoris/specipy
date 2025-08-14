@@ -12,8 +12,8 @@ class Specification(Protocol[T]):
     def __call__(self, candidate: T) -> bool:
         return self.is_satisfied_by(candidate)
 
-    def __and__(self, other) -> AndSpecification[T]:
-        return AndSpecification(self, other)  # type: ignore
+    def __and__(self, other: Specification[T]) -> AndSpecification[T]:
+        return AndSpecification(self, other)
 
     def __or__(self, other: Specification[T]) -> OrSpecification[T]:
         return OrSpecification(self, other)
