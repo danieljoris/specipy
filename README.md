@@ -9,7 +9,7 @@ SpeciPy simplifies the implementation of the Specification pattern in Python, en
 
 - [📥 Installation](#-installation)
 - [🚀 Usage](#-usage)
-- [📈 Roadmap / Future Goals](#-future)
+- [📈 Roadmap / Future Goals](#-roadmap--future-goals)
 - [🤝 Contributing](#-contributing)
 - [📜 License](#-license)
 - [📧 Contact](#-contact)
