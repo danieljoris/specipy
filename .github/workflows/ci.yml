@@ -10,7 +10,7 @@ name: CI Pipeline
 
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout repository
@@ -33,7 +33,7 @@ jobs:
         run: poetry run poe style
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: lint
 
     steps:
@@ -63,7 +63,7 @@ jobs:
           path: coverage.xml
 
   security-check:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: test
     permissions:
       # required for all workflows
@@ -95,7 +95,7 @@ jobs:
         uses: PyCQA/bandit-action@v1
 
   type-check:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout repository
@@ -118,7 +118,7 @@ jobs:
         run: poetry run poe type-check
 
   coverage:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: test
 
     steps:
@@ -141,7 +141,7 @@ jobs:
           name: code-coverage-report
 
   publish:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [lint, test, security-check, type-check, coverage]
     steps:
       - name: Checkout repository
