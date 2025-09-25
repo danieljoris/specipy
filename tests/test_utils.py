@@ -1,3 +1,4 @@
+from src.base import Specification
 from src.utils import filter_by_spec, lambda_spec
 
 
@@ -13,6 +14,41 @@ class TestLambdaSpec:
         assert is_positive(10)
         assert not is_positive(-5)
         assert not is_positive(0)
+
+    def test_lambda_spec_with_strings(self):
+        has_min_length = lambda_spec(lambda s: len(s) >= 3)
+        assert has_min_length("abc")
+        assert has_min_length("abcd")
+        assert not has_min_length("ab")
+
+    def test_lambda_spec_with_custom_objects(self):
+        class User:
+            user: str
+            age: int
+
+            def __init__(self, name: str, age: int):
+                self.name = name
+                self.age = age
+
+        is_adult = lambda_spec(lambda user: user.age >= 18)
+
+        user1 = User("João", 20)
+        user2 = User("Maria", 16)
+
+        assert is_adult(user1) is True
+        assert is_adult(user2) is False
+
+    def test_lambda_spec_with_implicit_type(self):
+        is_even = lambda_spec(lambda x: x % 2 == 0)
+        assert is_even(2)
+        assert is_even(4)
+        assert not is_even(3)
+
+    def test_lambda_spec_with_explicit_type(self):
+        is_even: Specification[int] = lambda_spec(lambda x: x % 2 == 0)
+        assert is_even(2)
+        assert is_even(4)
+        assert not is_even(3)
 
 
 class TestFilterBySpec:
@@ -36,3 +72,26 @@ class TestFilterBySpec:
 
         result = list(filter_by_spec(numbers, is_multiple_of_10))
         assert result == [10, 20, 30]
+
+    def test_filter_with_strings(self):
+        words = ["a", "ab", "abc", "abcd", "abcde"]
+        has_min_length = lambda_spec(lambda s: len(s) >= 3)
+
+        result = list(filter_by_spec(words, has_min_length))
+        assert result == ["abc", "abcd", "abcde"]
+
+    def test_filter_with_custom_specifications(self):
+        from src.extensions import GreaterThanSpecification
+
+        numbers = [1, 5, 10, 15, 20]
+        greater_than_ten = GreaterThanSpecification(10)
+
+        result = list(filter_by_spec(numbers, greater_than_ten))
+        assert result == [15, 20]
+
+    def test_filter_empty_iterable(self):
+        empty_list = []
+        is_even = lambda_spec(lambda x: x % 2 == 0)
+
+        result = list(filter_by_spec(empty_list, is_even))
+        assert result == []
